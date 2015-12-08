@@ -32,12 +32,12 @@ class bulkblock extends \moodleform {
         $blocks = \core_component::get_plugin_list('block');
         $options = array();
         foreach (array_keys($blocks) as $block) {
-            if (!has_capability("block/$block:addinstance", $context)) {
-                continue;
-            }
             $bi = block_instance($block);
             $formats = $bi->applicable_formats();
             if (!empty($formats['all']) || !empty($formats['course']) || !empty($formats['course-view'])) {
+                if (!has_capability("block/$block:addinstance", $context)) {
+                    continue;
+                }
                 $options[$block] = $bi->get_title();
             }
         }

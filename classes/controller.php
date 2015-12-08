@@ -60,7 +60,7 @@ class controller {
     protected function action_confirm() {
         global $CFG, $DB;
         require_once($CFG->libdir.'/blocklib.php');
-        $block = optional_param('block', null, PARAM_COMPONENT);
+        $block = optional_param('block', null, PARAM_ALPHANUMEXT);
         require_sesskey();
 
         $courses = $this->category->get_courses(array('recursive' => true));
