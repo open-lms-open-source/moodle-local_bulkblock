@@ -15,11 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 require_once(dirname(__FILE__).'/../../config.php');
-require_once($CFG->libdir.'/coursecatlib.php');
 
 $categoryid = required_param('id', PARAM_INT);
 $context = context_coursecat::instance($categoryid);
-$category = coursecat::get($categoryid);
+$category = core_course_category::get($categoryid);
 $site = get_site();
 
 require_login();
