@@ -20,3 +20,6 @@ $string['confirmaddtocourses'] = 'There are {$a->coursecount} courses in the "{$
 $string['pluginname'] = 'Bulk block creator';
 $string['returntocategory'] = 'Return to category';
 $string['successmsg'] = 'The "{$a->block}" block was added to {$a->count} courses.';
+
+// BASE-3506.
+$string['privacy:metadata'] = 'The Bulk block creator plugin does not store any personal data.';
