@@ -14,6 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Bulk block creator
+ * @package   local_bulkblock
+ * @copyright Copyright (c) 2021 Open LMS (https://www.openlms.net)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -24,17 +31,13 @@ defined('MOODLE_INTERNAL') || die();
  * @return void
  */
 function local_bulkblock_extend_settings_navigation($navigation, $context) {
-    global $SITE;
-
-    if (!isloggedin()) {
-        return;
-    }
-
     if (is_null($navigation) or is_null($context)) {
         return;
     }
-
     if (!($context instanceof context_coursecat)) {
+        return;
+    }
+    if (!has_capability('local/bulkblock:use', $context)) {
         return;
     }
     // Only add link when in the context of a coursecat.

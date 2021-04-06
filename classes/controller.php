@@ -16,6 +16,8 @@
 
 namespace local_bulkblock;
 
+defined('MOODLE_INTERNAL') || die();
+
 class controller {
     protected $category;
     protected $renderer;
@@ -35,8 +37,6 @@ class controller {
     }
 
     protected function action_select() {
-        global $PAGE;
-
         $cancelurl = new \moodle_url('/course/index.php', array('categoryid' => $this->category->id));
 
         $mform = new form\bulkblock(null, array('category' => $this->category, 'context' => $this->category->get_context()));
@@ -51,7 +51,7 @@ class controller {
                 'coursecount' => $this->category->get_courses_count(),
             );
             echo $this->renderer->confirmation($strdata, $yesurl, $cancelurl);
-            exit;
+            return;
         }
 
         echo $this->renderer->render_form_page($mform);

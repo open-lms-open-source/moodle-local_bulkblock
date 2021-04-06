@@ -14,13 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$capabilities = array(
-    // View the reporting
-    'local/bulkblock:use' => array(
+/**
+ * Bulk block creator
+ * @package   local_bulkblock
+ * @copyright Copyright (c) 2021 Open LMS (https://www.openlms.net)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+defined('MOODLE_INTERNAL') || die();
+
+$capabilities = [
+    'local/bulkblock:use' => [
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-        )
-    ),
-);
-
+        'archetypes' => [],
+    ],
+];

@@ -16,13 +16,13 @@
 
 namespace local_bulkblock\form;
 
+defined('MOODLE_INTERNAL') || die();
+
 require_once($CFG->libdir.'/formslib.php');
 require_once($CFG->libdir.'/blocklib.php');
 
 class bulkblock extends \moodleform {
     protected function definition() {
-        global $PAGE;
-
         $mform = $this->_form;
         $context = $this->_customdata['context'];
 

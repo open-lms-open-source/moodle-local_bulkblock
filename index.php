@@ -14,6 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Bulk block creator
+ * @package   local_bulkblock
+ * @copyright Copyright (c) 2021 Open LMS (https://www.openlms.net)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 require_once(dirname(__FILE__).'/../../config.php');
 
 $categoryid = required_param('id', PARAM_INT);

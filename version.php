@@ -15,15 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Bulk block creator
  * @package   local_bulkblock
+ * @copyright Copyright (c) 2021 Open LMS (https://www.openlms.net)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2015120101;
-$plugin->requires  = 2014051200;
-$plugin->cron      = 0;
+$plugin->version   = 2021040600;
+$plugin->release   = '3.9.0';
+$plugin->requires  = 2020061500;
 $plugin->component = 'local_bulkblock';
-$plugin->release   = '1.0';
-$plugin->maturity  = MATURITY_RC;
+$plugin->maturity  = MATURITY_STABLE;
